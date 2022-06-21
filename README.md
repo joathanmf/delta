@@ -1,19 +1,20 @@
-# DeltaApi
+# Delta Api
 
-To start your Phoenix server:
+Api simples criada para gerar números aleatórios para A, B e C para calcular o Delta, x1 e x2. Criada para a disciplina de Programação para Dispositivos Móveis do professor José Pessoa.
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+* rota **get** ".../api/abc" retorna aleatórios para A, B e C
+* rota **post** ".../api/delta" passando A, B, C e Delta, retorna x1 e x2
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+**Para utilizar localmente, faça:**
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+* Instale as dependências `mix deps.get`
+* Crie o banco de dados e execute as migrações `mix ecto.setup`
+* Lance o endpoint Phoenix com `mix phx.server` ou dentro do IEx com `iex -S mix phx.server`
 
-## Learn more
+## Aprenda mais
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+  * Site oficial: https://www.phoenixframework.org/
+  * Guias: https://hexdocs.pm/phoenix/overview.html
+  * Documentação: https://hexdocs.pm/phoenix
+  * Fórum: https://elixirforum.com/c/phoenix-forum
+  * Fonte: https://github.com/phoenixframework/phoenix
