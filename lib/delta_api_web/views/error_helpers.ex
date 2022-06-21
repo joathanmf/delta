@@ -1,4 +1,4 @@
-defmodule DeltaWeb.ErrorHelpers do
+defmodule DeltaApiWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -25,9 +25,9 @@ defmodule DeltaWeb.ErrorHelpers do
     # should be written to the errors.po file. The :count option is
     # set by Ecto and indicates we should also apply plural rules.
     if count = opts[:count] do
-      Gettext.dngettext(DeltaWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(DeltaApiWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(DeltaWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(DeltaApiWeb.Gettext, "errors", msg, opts)
     end
   end
 end

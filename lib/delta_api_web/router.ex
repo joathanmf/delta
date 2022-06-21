@@ -1,14 +1,15 @@
-defmodule DeltaWeb.Router do
-  use DeltaWeb, :router
+defmodule DeltaApiWeb.Router do
+  use DeltaApiWeb, :router
 
   pipeline :api do
     plug :accepts, ["json"]
   end
 
-  scope "/api", DeltaWeb do
+  scope "/api", DeltaApiWeb do
     pipe_through :api
 
-    get "/abc", AbcController, :get
+    get "/abc", AbcController, :get_abc
+    post "/delta", DeltaController, :calc
   end
 
   # Enables LiveDashboard only for development
@@ -24,7 +25,7 @@ defmodule DeltaWeb.Router do
     scope "/" do
       pipe_through [:fetch_session, :protect_from_forgery]
 
-      live_dashboard "/dashboard", metrics: DeltaWeb.Telemetry
+      live_dashboard "/dashboard", metrics: DeltaApiWeb.Telemetry
     end
   end
 

@@ -1,13 +1,13 @@
-defmodule DeltaWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :delta
+defmodule DeltaApiWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :delta_api
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_delta_key",
-    signing_salt: "O5w7TZyE"
+    key: "_delta_api_key",
+    signing_salt: "7SasUJi6"
   ]
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
@@ -18,7 +18,7 @@ defmodule DeltaWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :delta,
+    from: :delta_api,
     gzip: false,
     only: ~w(assets fonts images favicon.ico robots.txt)
 
@@ -26,7 +26,7 @@ defmodule DeltaWeb.Endpoint do
   # :code_reloader configuration of your endpoint.
   if code_reloading? do
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :delta
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :delta_api
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
@@ -44,5 +44,5 @@ defmodule DeltaWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug DeltaWeb.Router
+  plug DeltaApiWeb.Router
 end

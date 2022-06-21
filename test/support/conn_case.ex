@@ -1,4 +1,4 @@
-defmodule DeltaWeb.ConnCase do
+defmodule DeltaApiWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -11,7 +11,7 @@ defmodule DeltaWeb.ConnCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use DeltaWeb.ConnCase, async: true`, although
+  by setting `use DeltaApiWeb.ConnCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -22,17 +22,17 @@ defmodule DeltaWeb.ConnCase do
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
-      import DeltaWeb.ConnCase
+      import DeltaApiWeb.ConnCase
 
-      alias DeltaWeb.Router.Helpers, as: Routes
+      alias DeltaApiWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing
-      @endpoint DeltaWeb.Endpoint
+      @endpoint DeltaApiWeb.Endpoint
     end
   end
 
   setup tags do
-    Delta.DataCase.setup_sandbox(tags)
+    DeltaApi.DataCase.setup_sandbox(tags)
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
 end

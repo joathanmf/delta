@@ -7,15 +7,15 @@
 # General application configuration
 import Config
 
-config :delta,
-  ecto_repos: [Delta.Repo]
+config :delta_api,
+  ecto_repos: [DeltaApi.Repo]
 
 # Configures the endpoint
-config :delta, DeltaWeb.Endpoint,
+config :delta_api, DeltaApiWeb.Endpoint,
   url: [host: "localhost"],
-  render_errors: [view: DeltaWeb.ErrorView, accepts: ~w(json), layout: false],
-  pubsub_server: Delta.PubSub,
-  live_view: [signing_salt: "7JKldjdZ"]
+  render_errors: [view: DeltaApiWeb.ErrorView, accepts: ~w(json), layout: false],
+  pubsub_server: DeltaApi.PubSub,
+  live_view: [signing_salt: "BWg2Tiq+"]
 
 # Configures the mailer
 #
@@ -24,7 +24,7 @@ config :delta, DeltaWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :delta, Delta.Mailer, adapter: Swoosh.Adapters.Local
+config :delta_api, DeltaApi.Mailer, adapter: Swoosh.Adapters.Local
 
 # Swoosh API client is needed for adapters other than SMTP.
 config :swoosh, :api_client, false

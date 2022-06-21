@@ -1,5 +1,5 @@
-defmodule DeltaWeb.ErrorView do
-  use DeltaWeb, :view
+defmodule DeltaApiWeb.ErrorView do
+  use DeltaApiWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

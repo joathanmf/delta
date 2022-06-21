@@ -1,2 +1,2 @@
 ExUnit.start()
-Ecto.Adapters.SQL.Sandbox.mode(Delta.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(DeltaApi.Repo, :manual)

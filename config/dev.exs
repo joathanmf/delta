@@ -1,11 +1,11 @@
 import Config
 
 # Configure your database
-config :delta, Delta.Repo,
+config :delta_api, DeltaApi.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  database: "delta_dev",
+  database: "delta_api_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -16,14 +16,14 @@ config :delta, Delta.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with esbuild to bundle .js and .css sources.
-config :delta, DeltaWeb.Endpoint,
+config :delta_api, DeltaApiWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: 4000],
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "Rl2C3ONDSTWo5NSHb196YpSiCbV5ROQZ6EaqQn24WUZKso91Hrl5r/cegduYKmP7",
+  secret_key_base: "DWVVscrpYAOqdR0jCJVSEz1IFJ0dXC8LVDDrAlRPeVK4xupcQzKhYiKDWMdDWjwM",
   watchers: []
 
 # ## SSL Support

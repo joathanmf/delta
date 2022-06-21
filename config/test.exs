@@ -5,23 +5,23 @@ import Config
 # The MIX_TEST_PARTITION environment variable can be used
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
-config :delta, Delta.Repo,
+config :delta_api, DeltaApi.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  database: "delta_test#{System.get_env("MIX_TEST_PARTITION")}",
+  database: "delta_api_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :delta, DeltaWeb.Endpoint,
+config :delta_api, DeltaApiWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "KyfEL2j3ALR0YVOqnxi4o11pfufnzUhVrhb2012bNM9Ha3RHHig9whQU9CpQ6FoV",
+  secret_key_base: "a04Qmf0BDYoxiO24ynZh9V/P1CjHeiVrOHkgHoxPibjkglgf+tYZXYatR5AJO7iA",
   server: false
 
 # In test we don't send emails.
-config :delta, Delta.Mailer, adapter: Swoosh.Adapters.Test
+config :delta_api, DeltaApi.Mailer, adapter: Swoosh.Adapters.Test
 
 # Print only warnings and errors during test
 config :logger, level: :warn

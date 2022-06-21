@@ -1,4 +1,4 @@
-defmodule Delta.Application do
+defmodule DeltaApi.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -9,20 +9,20 @@ defmodule Delta.Application do
   def start(_type, _args) do
     children = [
       # Start the Ecto repository
-      Delta.Repo,
+      DeltaApi.Repo,
       # Start the Telemetry supervisor
-      DeltaWeb.Telemetry,
+      DeltaApiWeb.Telemetry,
       # Start the PubSub system
-      {Phoenix.PubSub, name: Delta.PubSub},
+      {Phoenix.PubSub, name: DeltaApi.PubSub},
       # Start the Endpoint (http/https)
-      DeltaWeb.Endpoint
-      # Start a worker by calling: Delta.Worker.start_link(arg)
-      # {Delta.Worker, arg}
+      DeltaApiWeb.Endpoint
+      # Start a worker by calling: DeltaApi.Worker.start_link(arg)
+      # {DeltaApi.Worker, arg}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Delta.Supervisor]
+    opts = [strategy: :one_for_one, name: DeltaApi.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
@@ -30,7 +30,7 @@ defmodule Delta.Application do
   # whenever the application is updated.
   @impl true
   def config_change(changed, _new, removed) do
-    DeltaWeb.Endpoint.config_change(changed, removed)
+    DeltaApiWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

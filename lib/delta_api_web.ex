@@ -1,12 +1,12 @@
-defmodule DeltaWeb do
+defmodule DeltaApiWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use DeltaWeb, :controller
-      use DeltaWeb, :view
+      use DeltaApiWeb, :controller
+      use DeltaApiWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,19 +19,19 @@ defmodule DeltaWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: DeltaWeb
+      use Phoenix.Controller, namespace: DeltaApiWeb
 
       import Plug.Conn
-      import DeltaWeb.Gettext
-      alias DeltaWeb.Router.Helpers, as: Routes
+      import DeltaApiWeb.Gettext
+      alias DeltaApiWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/delta_web/templates",
-        namespace: DeltaWeb
+        root: "lib/delta_api_web/templates",
+        namespace: DeltaApiWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -54,7 +54,7 @@ defmodule DeltaWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import DeltaWeb.Gettext
+      import DeltaApiWeb.Gettext
     end
   end
 
@@ -63,9 +63,9 @@ defmodule DeltaWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import DeltaWeb.ErrorHelpers
-      import DeltaWeb.Gettext
-      alias DeltaWeb.Router.Helpers, as: Routes
+      import DeltaApiWeb.ErrorHelpers
+      import DeltaApiWeb.Gettext
+      alias DeltaApiWeb.Router.Helpers, as: Routes
     end
   end
 
