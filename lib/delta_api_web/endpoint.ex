@@ -14,7 +14,6 @@ defmodule DeltaApiWeb.Endpoint do
 
   socket "/socket", DeltaApiWeb.UserSocket,
     websocket: [timeout: 45_000],
-    longpoll: false
 
   # Serve at "/" the static files from "priv/static" directory.
   #

@@ -22,13 +22,13 @@ config :logger, level: :info
 config(:delta_api, DeltaApiWeb.Endpoint,
   url: [scheme: "https", host: "calm-earth-68578.herokuapp.com", port: 443],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
-  http: [port: {:system, "PORT"}]
-  # https: [
-  #   port: 443,
-  #   cipher_suite: :strong,
-  #   keyfile: System.get_env("SOME_APP_SSL_KEY_PATH"),
-  #   certfile: System.get_env("SOME_APP_SSL_CERT_PATH")
-  # ]
+  # http: [port: {:system, "PORT"}]
+  https: [
+    port: 443,
+    cipher_suite: :strong,
+    keyfile: System.get_env("SOME_APP_SSL_KEY_PATH"),
+    certfile: System.get_env("SOME_APP_SSL_CERT_PATH")
+  ]
 )
 
 #
@@ -45,7 +45,6 @@ config(:delta_api, DeltaApiWeb.Endpoint,
 # We also recommend setting `force_ssl` in your endpoint, ensuring
 # no data is ever sent via http, always redirecting to https:
 #
-#     config :delta_api, DeltaApiWeb.Endpoint,
-#       force_ssl: [hsts: true]
+config :delta_api, DeltaApiWeb.Endpoint, force_ssl: [hsts: true]
 #
 # Check `Plug.SSL` for all available options in `force_ssl`.
