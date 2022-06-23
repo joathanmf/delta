@@ -47,12 +47,12 @@ defmodule DeltaApi.Deltas.Calc do
     end
   end
 
-  def call(_blabla) do
+  def call(_) do
     %{msg: "Informe o A, B, C e o DELTA"}
   end
 
   defp calc_delta(a, b, c) do
-    b ** 2 - 4 * a * c
+    b * b - 4 * a * c
   end
 
   # defp handle_insert({:ok, %Abc{id: id}}) do
