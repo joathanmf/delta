@@ -24,14 +24,15 @@ config :delta_api, DeltaApiWeb.Endpoint,
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
   load_from_system_env: true,
   cache_static_manifest: "priv/static/cache_manifest.json",
-  secret_key_base: System.get_env(), "SECRET_KEY_BASE"),
-  # http: [port: {:system, "PORT"}]
-  # https: [
-  #   port: 443,
-  #   cipher_suite: :strong,
-  #   keyfile: System.get_env("SOME_APP_SSL_KEY_PATH"),
-  #   certfile: System.get_env("SOME_APP_SSL_CERT_PATH")
-  # ]
+  secret_key_base: System.get_env("SECRET_KEY_BASE")
+
+# http: [port: {:system, "PORT"}]
+# https: [
+#   port: 443,
+#   cipher_suite: :strong,
+#   keyfile: System.get_env("SOME_APP_SSL_KEY_PATH"),
+#   certfile: System.get_env("SOME_APP_SSL_CERT_PATH")
+# ]
 
 #
 # The `cipher_suite` is set to `:strong` to support only the
