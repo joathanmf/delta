@@ -13,19 +13,28 @@ defmodule DeltaApi.Deltas.Calc do
 
       delta == d ->
         # -b +- raiz(delta) / 2 * a
+        if a != 0 do
+          x1 = (-b + :math.sqrt(delta)) / 2 * a
+          x2 = (-b - :math.sqrt(delta)) / 2 * a
 
-        x1 = (-b + :math.sqrt(delta)) / 2 * a
-        x2 = (-b - :math.sqrt(delta)) / 2 * a
-
-        %{
-          a: a,
-          b: b,
-          c: c,
-          msg: "Delta correto",
-          delta: delta,
-          x1: x1,
-          x2: x2
-        }
+          %{
+            a: a,
+            b: b,
+            c: c,
+            msg: "Delta correto",
+            delta: delta,
+            x1: x1,
+            x2: x2
+          }
+        else
+          %{
+            a: a,
+            b: b,
+            c: c,
+            msg: "O A não pode ser zero",
+            delta: delta
+          }
+        end
 
       #   changeset_delta =
       #     %{"delta" => delta, "abc_id" => 10}
