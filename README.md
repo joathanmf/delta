@@ -14,15 +14,15 @@ Exemplo da entrada:
 ~~~
 
 * rota **GET**: ".../api/eq2g/1"
-Retorna o **a, b, c** do id informado
+Retorna o **a, b, c** do id informado.
 * rota **GET**: ".../api/eq2g/1/delta"
-Retorna o **delta** do id informado
+Retorna o **delta** do id informado.
 * rota **GET**: ".../api/eq2g/1/x1"
-Retorna o **x1** do id informado
+Retorna o **x1** do id informado.
 * rota **GET**: ".../api/eq2g/1/x2"
-Retorna o **x2** do id informado
+Retorna o **x2** do id informado.
 
-* **DELETE**: ".../api/eq2g"
+* rota **DELETE**: ".../api/eq2g"
 Deleta **TODOS** os dados.
 
 **Para utilizar localmente, faça:**
