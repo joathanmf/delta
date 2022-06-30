@@ -16,6 +16,8 @@ defmodule DeltaApiWeb.Router do
     get "/eq2g/:id/delta", DeltaController, :delta
     get "/eq2g/:id/x1", DeltaController, :x1
     get "/eq2g/:id/x2", DeltaController, :x2
+
+    delete "/eq2g", DeltaController, :delete
   end
 
   # Enables LiveDashboard only for development

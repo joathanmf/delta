@@ -1,7 +1,7 @@
 defmodule DeltaApiWeb.DeltaController do
   use DeltaApiWeb, :controller
 
-  alias DeltaApi.Eq2g.{Post, GetId, Delta, X1x2}
+  alias DeltaApi.Eq2g.{Post, GetId, Delta, X1x2, Del}
 
   def post(conn, params) do
     conn
@@ -31,5 +31,11 @@ defmodule DeltaApiWeb.DeltaController do
     conn
     |> put_status(:ok)
     |> render("result.json", result: X1x2.call_x2(params))
+  end
+
+  def delete(conn, _params) do
+    conn
+    |> put_status(:ok)
+    |> render("result.json", result: Del.call())
   end
 end
