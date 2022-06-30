@@ -8,8 +8,14 @@ defmodule DeltaApiWeb.Router do
   scope "/api", DeltaApiWeb do
     pipe_through :api
 
-    get "/abc", AbcController, :get_abc
-    post "/delta", DeltaController, :calc
+    # get "/abc", AbcController, :get_abc
+    # post "/delta", DeltaController, :calc
+    post "/eq2g", DeltaController, :post
+
+    get "/eq2g/:id", DeltaController, :get_id
+    get "/eq2g/:id/delta", DeltaController, :delta
+    get "/eq2g/:id/x1", DeltaController, :x1
+    get "/eq2g/:id/x2", DeltaController, :x2
   end
 
   # Enables LiveDashboard only for development
