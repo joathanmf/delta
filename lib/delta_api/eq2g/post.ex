@@ -30,7 +30,5 @@ defmodule DeltaApi.Eq2g.Post do
     params
   end
 
-  def call(_) do
-    "Informe o Id, a, b e c"
-  end
+  def call(_), do: "Informe o Id, a, b e c"
 end
