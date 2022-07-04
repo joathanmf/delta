@@ -1,13 +1,20 @@
 defmodule DeltaApiWeb.DeltaController do
   use DeltaApiWeb, :controller
 
-  alias DeltaApi.Eq2g.{Post, GetId, Delta, X1x2, Del, DelId, Put}
+  alias DeltaApi.Eq2g.{Post, Get, GetId, Delta, X1x2, Del, DelId, Put}
 
   # Rota POST
   def post(conn, params) do
     conn
     |> put_status(:ok)
     |> render("result.json", result: Post.call(params))
+  end
+
+  # Rota GET, pega todos os dados EQ2G
+  def get(conn, _params) do
+    conn
+    |> put_status(:ok)
+    |> render("result.json", result: Get.call())
   end
 
   # Rota GET, pega EQ2G pelo ID

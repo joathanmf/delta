@@ -12,6 +12,7 @@ defmodule DeltaApiWeb.Router do
     # post "/delta", DeltaController, :calc
     post "/eq2g", DeltaController, :post
 
+    get "/eq2g", DeltaController, :get
     get "/eq2g/:id", DeltaController, :get_id
     get "/eq2g/:id/delta", DeltaController, :delta
     get "/eq2g/:id/x1", DeltaController, :x1
