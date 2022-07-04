@@ -1,6 +1,6 @@
-defmodule DeltaApi.Eq2g.Post do
-  def call(%{"a" => a, "b" => b, "c" => c, "id" => id}) do
-    params = %{"id" => id, "a" => a, "b" => b, "c" => c}
+defmodule DeltaApi.Eq2g.DelId do
+  def call(%{"id" => id}) do
+    id = String.to_integer(id)
 
     list_of_maps =
       File.read!("eq2g.txt")
@@ -12,20 +12,17 @@ defmodule DeltaApi.Eq2g.Post do
 
     case filter do
       [] ->
-        File.write("eq2g.txt", Jason.encode!(params) <> "\n", [:append])
+        "Não encontrado"
 
       _ ->
         list_of_maps = List.delete(list_of_maps, List.first(filter))
-        list_of_maps = list_of_maps ++ [params]
         File.write("eq2g.txt", "")
 
         Enum.map(list_of_maps, fn x ->
           File.write("eq2g.txt", Jason.encode!(x) <> "\n", [:append])
         end)
+
+        "Deletado com sucesso"
     end
-
-    params
   end
-
-  def call(_), do: "Informe o Id, a, b e c"
 end

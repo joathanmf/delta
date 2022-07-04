@@ -1,7 +1,7 @@
 defmodule DeltaApiWeb.DeltaController do
   use DeltaApiWeb, :controller
 
-  alias DeltaApi.Eq2g.{Post, GetId, Delta, X1x2, Del, Put}
+  alias DeltaApi.Eq2g.{Post, GetId, Delta, X1x2, Del, DelId, Put}
 
   # Rota POST
   def post(conn, params) do
@@ -43,6 +43,13 @@ defmodule DeltaApiWeb.DeltaController do
     conn
     |> put_status(:ok)
     |> render("result.json", result: Del.call())
+  end
+
+  # Rota DELETE, deleta pelo ID informado
+  def delete_id(conn, params) do
+    conn
+    |> put_status(:ok)
+    |> render("result.json", result: DelId.call(params))
   end
 
   # Rota PUT, troca algum dado armazenado do ID informado
