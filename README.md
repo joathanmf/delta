@@ -13,6 +13,8 @@ Exemplo da entrada:
 }
 ~~~
 
+* rota **GET**: ".../api/eq2g"
+Retorna todos os dados **a, b, c**.
 * rota **GET**: ".../api/eq2g/1"
 Retorna o **a, b, c** do id informado.
 * rota **GET**: ".../api/eq2g/1/delta"
@@ -21,9 +23,21 @@ Retorna o **delta** do id informado.
 Retorna o **x1** do id informado.
 * rota **GET**: ".../api/eq2g/1/x2"
 Retorna o **x2** do id informado.
+<br>
 
+* rota **DELETE**: ".../api/eq2g/1"
+Deleta **a, b, c** do id informado.
 * rota **DELETE**: ".../api/eq2g"
 Deleta **TODOS** os dados.
+<br>
+
+* rota **PUT**: ".../api/eq2g/1"
+Exemplo da entrada:
+~~~json
+{
+  "b": 9,
+}
+~~~
 
 **Para utilizar localmente, faça:**
 
