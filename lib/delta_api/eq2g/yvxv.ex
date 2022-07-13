@@ -26,7 +26,7 @@ defmodule DeltaApi.Eq2g.Yvxv do
     end
   end
 
-  defp calc_yv(%{"a" => a}, delta), do: -delta / 4 * a
+  defp calc_yv(%{"a" => a}, delta), do: -delta / (4 * a)
 
-  defp calc_xv(%{"a" => a, "b" => b}), do: -b / 2 * a
+  defp calc_xv(%{"a" => a, "b" => b}), do: -b / (2 * a)
 end
