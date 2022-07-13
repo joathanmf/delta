@@ -5,7 +5,7 @@ defmodule DeltaApi.Eq2g.X1x2 do
     resp = GetId.call(params)
 
     case resp do
-      nil ->
+      "Não encontrado" ->
         "Não encontrado"
 
       _ ->
@@ -18,7 +18,7 @@ defmodule DeltaApi.Eq2g.X1x2 do
     resp = GetId.call(params)
 
     case resp do
-      nil ->
+      "Não encontrado" ->
         "Não encontrado"
 
       _ ->

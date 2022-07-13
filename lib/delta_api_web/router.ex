@@ -17,6 +17,8 @@ defmodule DeltaApiWeb.Router do
     get "/eq2g/:id/delta", DeltaController, :delta
     get "/eq2g/:id/x1", DeltaController, :x1
     get "/eq2g/:id/x2", DeltaController, :x2
+    get "/eq2g/:id/yv", DeltaController, :yv
+    get "/eq2g/:id/xv", DeltaController, :xv
 
     delete "/eq2g", DeltaController, :delete
     delete "/eq2g/:id", DeltaController, :delete_id
