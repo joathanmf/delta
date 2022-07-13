@@ -28,10 +28,10 @@ defmodule DeltaApi.Eq2g.X1x2 do
   end
 
   defp calc_x1(%{"a" => a, "b" => b}, delta) do
-    (-b + :math.sqrt(delta)) / 2 * a
+    (-b + :math.sqrt(delta)) / (2 * a)
   end
 
   defp calc_x2(%{"a" => a, "b" => b}, delta) do
-    (-b - :math.sqrt(delta)) / 2 * a
+    (-b - :math.sqrt(delta)) / (2 * a)
   end
 end
