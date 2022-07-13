@@ -23,6 +23,10 @@ Retorna o **delta** do id informado.
 Retorna o **x1** do id informado.
 * rota **GET**: ".../api/eq2g/1/x2"
 Retorna o **x2** do id informado.
+* rota **GET**: ".../api/eq2g/1/yv"
+Retorna o **Y do vértice** do id informado.
+* rota **GET**: ".../api/eq2g/1/xv"
+Retorna o **X do vértice** do id informado.
 <br>
 
 * rota **DELETE**: ".../api/eq2g/1"
